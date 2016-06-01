@@ -1,52 +1,57 @@
 var Flashcard = (function($) {
 
     var questions;
-    var currentIndex = 0;
+    var currentIndex = -1;
+    var progress = 0;
     var isQuestion = true;
 
-    var randomIndex = function () {
-        var index = Math.floor(Math.random() * questions.questions.length);
-        return index;
+    var nextIndex = function () {
+        currentIndex++;
+        if (currentIndex >= questions.length) {
+            currentIndex = 0;
+        }
+        return currentIndex;
     }
 
     var loadData = function (file) {
         $.getJSON('subjects/' + file, function(result) {
             console.log('Loaded subject');
-            questions = result;
-            renderData(result);
+            renderInitialData(result);
         })
         .fail(function (error) {
             console.log('Not able to load subject JSON with error:\n', error);
         });
     }
 
-    var renderData = function (data) {
+    var renderInitialData = function (data) {
         console.log('Rendering data');
+        questions = data.questions.sort(function() {
+            return 0.5 - Math.random();
+        });
+
         $('#subject h1').html(data.code + ': ' + data.subject);
+        $('#progress-total').html(questions.length);
 
-        var nextIndex = randomIndex();
-        currentIndex = nextIndex;
+        var next = nextIndex();
 
-        renderQuestion(data.questions[nextIndex]);
+        renderQuestion(questions[next]);
     }
 
     var renderQuestion = function (question) {
         console.log('Rendering question');
+        $('#progress-current').html(++progress);
         $('#answer-detail').html('');
         $('#question-detail').html(question.question);
-        //isQuestion = true;
     }
 
     var next = function () {
-        console.log(isQuestion);
         if (!isQuestion) {
-            var nextIndex = randomIndex();
-            currentIndex = nextIndex;
-            var question = questions.questions[nextIndex];
+            var next = nextIndex();
+            var question = questions[next];
             renderQuestion(question);
         } else {
             var element = $('#answer-detail')
-            $(element).html(questions.questions[currentIndex].answer);
+            $(element).html(questions[currentIndex].answer);
             MathJax.Hub.Queue(["Typeset", MathJax.Hub, element[0]]);
         }
         isQuestion = !isQuestion;

@@ -17,8 +17,8 @@ with open(location) as f:
     data = f.readlines()
 
 contents = {
-    'subject': data[0],
-    'code': data[1],
+    'subject': data[0].strip(),
+    'code': data[1].strip(),
     'questions': []
 }
 

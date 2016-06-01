@@ -75,4 +75,8 @@ $(window).on('load', function () {
    $(window).on('keypress', function () {
         Flashcard.next();
    });
+
+   $('#question-detail').on('touchend', function() {
+        Flashcard.next();
+   });
 });

@@ -50,3 +50,25 @@ body {
 #progress-total {
     margin-left: .2rem;
 }
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px) {
+    body {
+        width: 85%;
+    }
+    h1 {
+        text-align: center;
+        font-size: 10rem;
+    }
+
+    h2#question-detail {
+        font-size: 6rem;
+    }
+    h2#answer-detail {
+        font-size: 6rem;
+    }
+    #progress {
+        font-size: 3rem;
+    }
+}

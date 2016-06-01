@@ -38,3 +38,15 @@ body {
 #answer {
     margin-top: 4rem;
 }
+
+#progress {
+    font-size: 1.4rem;
+}
+
+#progress-current {
+    margin-right: .2rem;
+}
+
+#progress-total {
+    margin-left: .2rem;
+}

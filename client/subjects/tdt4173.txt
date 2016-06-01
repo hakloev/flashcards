@@ -1,7 +1,8 @@
 Machine Learning and Case-Based Reasoning
 TDT4173
 This is the question:= $a \neq b$
-This is naive bayes question:= $v_{MAP} = \underset{v_j \in V}{argmax} ~P(v_j) \prod_{i} P(a_j|v_j)$
+This is $v_{NB}$ naive bayes question:= $v_{NB} = \underset{v_j \in V}{argmax} ~P(v_j) \prod_{i} P(a_j|v_j)$
 This is your MOM:= This is your moms answer
 This is noob questh:= $noob \geq error_{i}$
+Define a well-posed learing problem:= A computer is said to learn from experience $E$ with respect to some class of tasks $T$ and performance measure $P$, if its performance at tasks in $T$, as measured by $P$, improves with experience $E$.
 This is chris:= sdf $\\ awesome(x) = chris$

@@ -41,7 +41,10 @@ var Flashcard = (function($) {
         console.log('Rendering question');
         $('#progress-current').html(++progress);
         $('#answer-detail').html('');
-        $('#question-detail').html(question.question);
+        var element = $('#question-detail')
+        $(element).html(question.question);
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, element[0]]);
+
     }
 
     var next = function () {

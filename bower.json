@@ -19,6 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "MathJax": "^2.6.1"
+    "MathJax": "^2.6.1",
+    "jquery": "^2.2.4"
   }
 }

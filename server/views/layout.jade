@@ -4,3 +4,14 @@ html
         title= title
     body
         block content
+        script(type='text/javascript', src='jquery/dist/jquery.min.js')
+        script(type='text/javascript', src='MathJax/MathJax.js?config=default')
+        script(type='text/x-mathjax-config').
+            MathJax.Hub.Config({
+                messageStyle: 'none',
+                tex2jax: {
+                    inlineMath: [ ['$', '$'], ["\\(", "\\)"] ],
+                    processEscapes: true
+                }
+            });
+        script(type='text/javascript', src='flashcard.js')

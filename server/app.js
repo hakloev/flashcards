@@ -18,14 +18,14 @@ config.staticDirs.forEach((dir) => {
     app.use(express.static(dir));
 });
 
-router.get('/', (req, res, next) => {
+app.get('/', (req, res, next) => {
     res.render('index', { title: 'Flashcards' });
 });
 
-app.use('/', router);
+//app.use('/', router);
 
 app.use((req, res, next) => {
-    const err = new Error('Not found...');
+    const err = new Error('Not found...: ', req);
     err.status = 404;
     next(err);
 });

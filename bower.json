@@ -1,0 +1,24 @@
+{
+  "name": "flashcards",
+  "description": "Simple flashcard application with support for mathtex",
+  "main": "index.js",
+  "authors": [
+    "Håkon Ødegård Løvdal"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "flashcards",
+    "mathtex"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "MathJax": "^2.6.1"
+  }
+}

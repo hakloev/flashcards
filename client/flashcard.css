@@ -1,0 +1,40 @@
+html {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: 10px;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 300;
+}
+
+h2#question-detail {
+    font-size: 4rem;
+    font-weight: 200;
+}
+
+h2#answer-detail {
+    font-size: 2.5rem;
+    font-weight: 100;
+}
+
+body {
+    width: 85%;
+    margin: 0 auto;
+}
+
+#subject {
+    border-bottom: 1px solid black;
+}
+
+#question, #answer {
+    text-align: center;
+}
+
+#question {
+    margin-top: 5rem;
+}
+
+#answer {
+    margin-top: 4rem;
+}

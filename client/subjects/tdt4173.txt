@@ -4,3 +4,4 @@ This is the question:= $a \neq b$
 This is naive bayes question:= $v_{MAP} = \underset{v_j \in V}{argmax} ~P(v_j) \prod_{i} P(a_j|v_j)$
 This is your MOM:= This is your moms answer
 This is noob questh:= $noob \geq error_{i}$
+This is chris:= sdf $\\ awesome(x) = chris$

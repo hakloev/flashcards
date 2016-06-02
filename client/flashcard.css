@@ -24,6 +24,12 @@ body {
     margin: 0 auto;
 }
 
+#answer br {
+    display: block;
+    margin-top: 20px;
+    content: ""; /* Fix for Chrome */
+}
+
 #subject {
     border-bottom: 1px solid black;
 }

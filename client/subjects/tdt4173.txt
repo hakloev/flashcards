@@ -29,6 +29,21 @@ SVM are called 'large margin classifiers', why?:= The supporting planes are push
 What is a 'kernel' in SVM?:= In order to solve the problem in a higher dimension it's defined a $K(x_i, x_j) = \theta (x_i)^{T} \theta (x_j)$. The different kernels have different properties, and finding the right for your problem is a difficult task.
 Two methods for avoiding overfitting in ID3?:= Stop growing when data split is not statistically significant. Secondly grow the full tree, then post prune the tree.
 Formula for the sample error::= $error_s (h) \equiv \frac{1}{n}\sum_{x\in S}\gamma(f(x), h(x))$
-Formula for the trye error::= $error_D (h) \equiv \underset{x\in D}{Pr}[f(x) \neq h(x)]$
+Formula for the true error::= $error_D (h) \equiv \underset{x\in D}{Pr}[f(x) \neq h(x)]$
 Mathematical definition of $h_{MAP}$::= $h_{MAP} = \underset{h \in H}{argmax}~ P(D|h)P(h)$
 Mathematical definition of $h_{ML}$::= $h_{ML} \equiv \underset{h \in H}{argmax}~ P(D|h)$
+What's Bayes' Theorem?:= $P(h|D) = \frac{P(D|h)P(h)}{P(D)}$
+The prior probability of $h$ is::= $P(h)$
+The probability of observing $D$ in a world where $h$ holds is::= $P(D|h)$
+Some post-prune techniques has been presented, explain reduced error pruning::= This approach consideres each node a candidate for pruning. It removes the entire subtree of a node, making the node a leaf node. Nodes are removed only if the resulting tree performs no worse than the original over the validation set. The pruning is greedy.
+Some post-prune techniques has been presented, explain rule post-pruning::= This approach infers the DT from the training set (growing the tree until the training data fits as well as possible, while allowing overfitting). It then converts the tree to set of rules by creating a rule for each path from root to leaf. Then it sorts the rules by estimated accuracy and and prunes the rules whose removal does not worsen its estimated accuracy.
+When is a class $C$ PAC-learnable by a learner $L$ with a hypothesis space $h$?:= When <br> $c\in C$ <br> distributuons $D$ over $X$ <br> $\epsilon$ such that $0 < \epsilon < 1/2$, and <br> $\delta$ such that $0 < \delta < 1/2$
+The joint probability distribution over all variables in a Bayesian Network are::= $P(y_1, \dots ,y_n) = \prod_{i=1}^{n}P(y_i|parents(y_i))$
+What's the Brute-Force Bayes Concept Learning? Pseudocode and description::= It's a straightforward concept learning algorithm that outputs the $h_{MAP}$ by iterating each $h \in H$ and calculate the posterior probability by Bayes' Theorem. Finally it outputs the one with the highes probability: <br> $h_{MAP} = \underset{h \in H}{argmax} P(h|D)$
+What do we mean by "bias in the estimate" in terms of evaluating hypotheses?:= The observed accuracy of the learned hypothesis over the training examples is often a poor estimator of its accuracy in future examples. This yields an biased estimate.
+What do we mean by "variance in the estimate" in terms of evaulating hypotheses?:= We need a larger test set, since the smaller test examples, the greater the expected variance.
+What's the main idea behind Occam's Razor?:= Prefer the shortest hypothesis that fits the data. Said otherwise: maximize complexity and simplicity.
+Give a textual definition of the inductive bias::= The inductive bias is the set of assumptions made by a learner to be able to generalize from training examples
+Give the formal definition of inductive bias::= The inductive bias of $L$ is any minimal set of assertions $B$ such that for any target concept $c$ and corresponding training examples $D_c$: <br> $(\forall x_i \in X)[(B \land D_c \land X_i ) \vdash L(x_i , D_c)]$
+The formal definition of general-to-specific ordering of hypotheses is true iff::= $(\forall x \in X)[(h_k (x) = 1) \rightarrow (h_j (x) = 1)]$
+Give an example of a well-posed learning problem? (The answer will be an indication on how it should look like):= Task T: playing checkers <br> Performance measure P: percent of games won against opponents <br> Training experience E: playing practice games against itself

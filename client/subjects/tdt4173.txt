@@ -1,12 +1,34 @@
 Machine Learning and Case-Based Reasoning
 TDT4173
-What is the formula for the Naive Bayes Classifier:= $v_{NB} = \underset{v_j \in V}{argmax} ~P(v_j) \prod_{i} P(a_j|v_j)$
-Define a well-posed learing problem:= A computer is said to learn from experience $E$ with respect to some class of tasks $T$ and performance measure $P$, if its performance at tasks in $T$, as measured by $P$, improves with experience $E$.
-What is the inductive learning hypothesis:= Any hypothesis found to approximate the target function well over a sufficiently large set of training examples will also approximate the target function well over other unobserved examples.
-A hypothesis $h$ is consistent with a set of training examples $D$ iff:= $Consistent(h,D) \equiv (\forall \big< x, c(x) \big> \in D) h(x) = c(x)$
-Definition of version space ($VS_{H,D}$):= $VS_{HD} \equiv \big\{ h \in H | Consistent(h,D) \big\}$
-Which of the following has an inductive bias? Rote Learner, Candidate Elimination or Find-S:= Candidate Elimination and Find-S
+What is the formula for the Naive Bayes Classifier?:= $v_{NB} = \underset{v_j \in V}{argmax} ~P(v_j) \prod_{i} P(a_j|v_j)$
+Define a well-posed learing problem::= A computer is said to learn from experience $E$ with respect to some class of tasks $T$ and performance measure $P$, if its performance at tasks in $T$, as measured by $P$, improves with experience $E$.
+What is the inductive learning hypothesis?:= Any hypothesis found to approximate the target function well over a sufficiently large set of training examples will also approximate the target function well over other unobserved examples.
+A hypothesis $h$ is consistent with a set of training examples $D$ iff::= $Consistent(h,D) \equiv (\forall \big< x, c(x) \big> \in D) h(x) = c(x)$
+Definition of version space ($VS_{H,D}$)::= $VS_{HD} \equiv \big\{ h \in H | Consistent(h,D) \big\}$
+Which of the following has an inductive bias? Rote Learner, Candidate Elimination or Find-S?:= Candidate Elimination and Find-S
 What's the E-step in the EM-algorithm?:= Calculate $Q(h^{'}|h)$ using the current hypothesis $h$ and the observed data $X$ to estimate the probability distribution over Y. <br> $Q(h^{'}|h) \leftarrow E[ln ~P(Y|h^{'})|h, X]$
 What's the M-step in the EM-algorithm?:= Replace the hypothesis $h$ by the hypothesis $h^{'}$ that maximizes the Q-function: <br> $h \leftarrow \underset{h^{'}}{argmax} ~Q(h^{'}|h)$
 What's the four main phases of the CBR-cycle?:= Retrieve, Reuse, Revise and Retain
-Define a weak classifier:= Weak classifiers are classifiers which perform only slightly better than a random classifier.
+Define a weak classifier::= Weak classifiers are classifiers which perform only slightly better than a random classifier.
+The most general hypothesis is::= \big< ?,?,?,?,?,? \big>$
+The most specific hypothesis is::= $\big< \emptyset,\emptyset,\emptyset,\emptyset,\emptyset,\emptyset \big>$
+Define the general-to-specific ordering of hypotheses::= If any instance classified as positive by a hypothesis $h_1$ is also classified positive by a more general hypothesis $h_2$, we have the more-general-relationship. It's written $h_j \geq_{g} h_k$
+The main idea of the FIND-S algorithm is::= Exploit the more-general-relationship to find the maximum specific hypothesis. Start with the most specific, and iterate every positive training example. For each attribute that is satisfied, do nothing. Else replace the attribute with the next more general constraint.
+There are two types of inductive bias, name them::= Restriction bias, that is: a restriction in the hypothesis space. <br> Preference bias, that is: Like in ID3, we prefer small trees and high information gain close to the root.
+Can we learn withot inductive bias?:= Yes, but in order to learn the entire hypothesis space, you must apply as much data as there is in the whole world. Must know everything to learn everything.
+What is the definition of overfitting? (the 'formula'):= $error_{s}(h) < error_{s}(h^{'})$ and $error_D (h) > error_D (h^{'})$
+Give a textual description of overfitting::= A hypothesis overfitts a training set if another hypothesis has higher training error, but less error in the entire distribution $D$.
+Give two algorithms that use a-priori knowledge::= Bayesian Network and
+Give two algorithms that use a-posteriori knowledge::= SVM and Decision Tree Learning
+What's the assumption of the Naive Bayes Classifier?:= All attributes are independent of each other. <br> $P(a_1 , a_2, \dots , a_n |v_j) = \prod_{i} P(a_i|v_j)$
+Weakness of the Naive Bayes assumption?:= It's restrictive. I many cases the attributes can be said to be dependent (e.g. thunder and rain)
+When do we use the EM-algorithm?:= The EM-algorithm is used when we have a distribution of $k$ different normal distributuon, and we want to find the $k$ mean-values. It searches for the $h_{MAP}$ by repeatedly re-estimating the expected values of the hidden variables $z_{ij}$ given its current hypothesis $u_1, \dots u_k$
+What is cross-validation?:= Cross-validation is to leave out a piece of the training set, and use it to check if their classified correct after training.
+What is 'bagging'?:= Bagging is a collection of weak classifiers where each one of them gets data set of $m$ training examples drawn randomly with replacement from the original training set. The final classification is done by a majority vote of all the classifiers. The weak classifier should be unstable (small changes in training set, leads to large variations in classification).
+SVM are called 'large margin classifiers', why?:= The supporting planes are pushed apart until they bump into the support vectors.
+What is a 'kernel' in SVM?:= In order to solve the problem in a higher dimension it's defined a $K(x_i, x_j) = \theta (x_i)^{T} \theta (x_j)$. The different kernels have different properties, and finding the right for your problem is a difficult task.
+Two methods for avoiding overfitting in ID3?:= Stop growing when data split is not statistically significant. Secondly grow the full tree, then post prune the tree.
+Formula for the sample error::= $error_s (h) \equiv \frac{1}{n}\sum_{x\in S}\gamma(f(x), h(x))$
+Formula for the trye error::= $error_D (h) \equiv \underset{x\in D}{Pr}[f(x) \neq h(x)]$
+Mathematical definition of $h_{MAP}$::= $h_{MAP} = \underset{h \in H}{argmax}~ P(D|h)P(h)$
+Mathematical definition of $h_{ML}$::= $h_{ML} \equiv \underset{h \in H}{argmax}~ P(D|h)$

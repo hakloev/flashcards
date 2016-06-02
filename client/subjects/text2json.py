@@ -3,6 +3,7 @@
 import sys
 import json
 import os
+import random
 
 _file = sys.argv[1]
 
@@ -24,11 +25,19 @@ contents = {
 
 for line in data[2:]:
     raw_content = line.rstrip().split(':=')
-    question = {
-        'question': raw_content[0],
-        'answer': raw_content[1]
-    }
+
+    try:
+        question = {
+            'question': raw_content[0],
+            'answer': raw_content[1]
+        }
+    except IndexError as e:
+        print('Error on the following line:\n%s' % raw_content)
+        exit()
+
     contents['questions'].append(question)
+
+contents['questions'] = sorted(contents['questions'], key=lambda k: random.random())
 
 new_file = location.split('.')[0] + '.json'
 with open(new_file, 'w+') as f:

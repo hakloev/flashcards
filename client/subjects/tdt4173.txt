@@ -47,3 +47,13 @@ Give a textual definition of the inductive bias::= The inductive bias is the set
 Give the formal definition of inductive bias::= The inductive bias of $L$ is any minimal set of assertions $B$ such that for any target concept $c$ and corresponding training examples $D_c$: <br> $(\forall x_i \in X)[(B \land D_c \land X_i ) \vdash L(x_i , D_c)]$
 The formal definition of general-to-specific ordering of hypotheses is true iff::= $(\forall x \in X)[(h_k (x) = 1) \rightarrow (h_j (x) = 1)]$
 Give an example of a well-posed learning problem? (The answer will be an indication on how it should look like):= Task T: playing checkers <br> Performance measure P: percent of games won against opponents <br> Training experience E: playing practice games against itself
+Under which conditions is ML identical to MAP?:= When $P(h)$ is a uniform distribution
+What's the purpouse of the EM-algorithm?:= It is an iterative method for finding the MAP estimate of variables. Used to find/estimate the probability distributions for unobserved variables.
+When does the Candidate Elimination algorithm accurately classify a given instance positive or negative?:= When half the version space hypothesis classify it as postive, and the other half as negative
+When does the Candidate Elimination algorithm classify all instances as either positive or negative?:= When S and G converge to a single, identical, hypothesis.
+What is the run time complexity of the Naive Bayes classifier (both learning and classifying)?:= Classifying = $O(|V|n)$ <br> Learning = $O(|V|n|T|)$
+What's a lazy learner in terms of instance-based learning and case-based reasoning?:= The learner does not generalize beyond the training data until a new query instance is observed
+Give a brief overview of analytical learning::= Analytical learning adds a body of domain knowledge when it learns. This makes it contain a domain theory for explaining the examples. This is in addition to the regular instances, hypotheses, target concept and training examples. The task then is to determine if a hypothesis is consistent with the training examples and the domain theory.
+What's explanation-based learning?:= It's an analytical learning algorithm. It starts with an empty hypothesis and iterates each positive training example not covered by $h$. Each iterations goes through the steps: Explan, Analyze and Refine.
+When designing a new learning program, what are the main design decisions?:= Training Experience <br> Target Function <br> Representation of the target function <br> Function approximation algorithm
+

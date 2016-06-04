@@ -56,3 +56,7 @@ What's a lazy learner in terms of instance-based learning and case-based reasoni
 Give a brief overview of analytical learning::= Analytical learning adds a body of domain knowledge when it learns. This makes it contain a domain theory for explaining the examples. This is in addition to the regular instances, hypotheses, target concept and training examples. The task then is to determine if a hypothesis is consistent with the training examples and the domain theory.
 What's explanation-based learning?:= It's an analytical learning algorithm. It starts with an empty hypothesis and iterates each positive training example not covered by $h$. Each iterations goes through the steps: Explan, Analyze and Refine.
 When designing a new learning program, what are the main design decisions?:= Training Experience <br> Target Function <br> Representation of the target function <br> Function approximation algorithm
+What is an 'unstable' learning algorithm?:= Algorithms whose output classifier undergoes major changes in response to small changes in the training data. Typical algorithms are: decision-trees, ANNs and rule-learning algorithms.
+What is the $K$-parameter in the Extra-Trees algorithm?:= $K$ is the number of attributes randomly selected at each node.
+What is the $n_{min}$ parameter in the Extra-Trees algorithm?:= $n_{min}$ is the minimum sample size for splitting a node.
+What is the $M$-parameter in the Extra-Trees algorithm?:= $M$ is the number of trees in the ensemble.

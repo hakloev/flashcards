@@ -15,10 +15,10 @@ The most specific hypothesis is::= $\big< \emptyset,\emptyset,\emptyset,\emptyse
 Define the general-to-specific ordering of hypotheses::= If any instance classified as positive by a hypothesis $h_1$ is also classified positive by a more general hypothesis $h_2$, we have the more-general-relationship. It's written $h_j \geq_{g} h_k$
 The main idea of the FIND-S algorithm is::= Exploit the more-general-relationship to find the maximum specific hypothesis. Start with the most specific, and iterate every positive training example. For each attribute that is satisfied, do nothing. Else replace the attribute with the next more general constraint.
 There are two types of inductive bias, name them::= Restriction bias, that is: a restriction in the hypothesis space. <br> Preference bias, that is: Like in ID3, we prefer small trees and high information gain close to the root.
-Can we learn withot inductive bias?:= Yes, but in order to learn the entire hypothesis space, you must apply as much data as there is in the whole world. Must know everything to learn everything.
+Can we learn without inductive bias?:= Yes, but in order to learn the entire hypothesis space, you must apply as much data as there is in the whole world. Must know everything to learn everything.
 What is the definition of overfitting? (the 'formula'):= $error_{s}(h) < error_{s}(h^{'})$ and $error_D (h) > error_D (h^{'})$
 Give a textual description of overfitting::= A hypothesis overfitts a training set if another hypothesis has higher training error, but less error in the entire distribution $D$.
-Give two algorithms that use a-priori knowledge::= Bayesian Network and
+Give two algorithms that use a-priori knowledge::= Bayesian Network.. Sorry...
 Give two algorithms that use a-posteriori knowledge::= SVM and Decision Tree Learning
 What's the assumption of the Naive Bayes Classifier?:= All attributes are independent of each other. <br> $P(a_1 , a_2, \dots , a_n |v_j) = \prod_{i} P(a_i|v_j)$
 Weakness of the Naive Bayes assumption?:= It's restrictive. I many cases the attributes can be said to be dependent (e.g. thunder and rain)
@@ -49,7 +49,7 @@ The formal definition of general-to-specific ordering of hypotheses is true iff:
 Give an example of a well-posed learning problem? (The answer will be an indication on how it should look like):= Task T: playing checkers <br> Performance measure P: percent of games won against opponents <br> Training experience E: playing practice games against itself
 Under which conditions is ML identical to MAP?:= When $P(h)$ is a uniform distribution
 What's the purpouse of the EM-algorithm?:= It is an iterative method for finding the MAP estimate of variables. Used to find/estimate the probability distributions for unobserved variables.
-When does the Candidate Elimination algorithm accurately classify a given instance positive or negative?:= When half the version space hypothesis classify it as postive, and the other half as negative
+When does the Candidate Elimination algorithm accurately classify a given instance positive or negative?:= When all hypotheses agrees on a classification, or there is a vote in favor of a classification. Also when G=S.
 When does the Candidate Elimination algorithm classify all instances as either positive or negative?:= When S and G converge to a single, identical, hypothesis.
 What is the run time complexity of the Naive Bayes classifier (both learning and classifying)?:= Classifying = $O(|V|n)$ <br> Learning = $O(|V|n|T|)$
 What's a lazy learner in terms of instance-based learning and case-based reasoning?:= The learner does not generalize beyond the training data until a new query instance is observed

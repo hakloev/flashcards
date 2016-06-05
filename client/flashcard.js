@@ -4,11 +4,24 @@ var Flashcard = (function($) {
     var currentIndex = -1;
     var progress = 0;
     var isQuestion = true;
+    var showingMessage = false;
+
+    var showMessage = function () {
+        showingMessage = !showingMessage;
+        $('#message').css('display', 'block');
+    }
 
     var nextIndex = function () {
+        if (showingMessage) {
+            $('#message').css('display', 'none');
+            showingMessage = !showingMessage;
+        }
+
         currentIndex++;
         if (currentIndex >= questions.length) {
             currentIndex = 0;
+            progress = 0
+            showMessage();
         }
         return currentIndex;
     }

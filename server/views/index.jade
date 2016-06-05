@@ -1,16 +1,11 @@
 extends layout
 
 block content
-    #message(style="display: none;")
-        h2.
-            Congratulations, you answered all the questions!
-    #subject
-        h1= title
-    #question
-        h2#question-detail
-    #answer
-        h2#answer-detail
-    #progress
-        span#progress-current 0
-        | /
-        span#progress-total 0
+    #header
+        h1.
+            Subjects
+    #subjects
+        each subject in subjects
+            a(href='/subject/' + subject._id).subject
+                p= subject.title
+                span= subject.code

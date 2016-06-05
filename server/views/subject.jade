@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    input(type='hidden', id='subject-id', value=subject._id)
+    #message(style="display: none;")
+        h2.
+            Congratulations, you answered all the questions!
+    #subject
+        h1= title
+    #question
+        h2#question-detail
+    #answer
+        h2#answer-detail
+    #progress
+        span#progress-current 0
+        | /
+        span#progress-total 0

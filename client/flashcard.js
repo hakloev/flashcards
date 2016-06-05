@@ -27,7 +27,9 @@ var Flashcard = (function($) {
     }
 
     var loadData = function (file) {
-        $.getJSON('subjects/' + file, function(result) {
+        var subjectId = $('#subject-id').attr('value');
+        $.getJSON('/subject/' + subjectId + '/json', function(result) {
+            console.log(result);
             console.log('Loaded subject');
             renderInitialData(result);
         })
@@ -38,11 +40,10 @@ var Flashcard = (function($) {
 
     var renderInitialData = function (data) {
         console.log('Rendering data');
-        questions = data.questions.sort(function() {
+        questions = data.sort(function() {
             return 0.5 - Math.random();
         });
 
-        $('#subject h1').html(data.code + ': ' + data.subject);
         $('#progress-total').html(questions.length);
 
         var next = nextIndex();
@@ -76,7 +77,7 @@ var Flashcard = (function($) {
     return {
         init: function () {
             console.log('Initiating flashcards');
-            loadData('tdt4173.json');
+            loadData();
         },
         next: next
     }

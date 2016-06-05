@@ -1,12 +1,12 @@
 doctype html
 html
     head
-        link(rel='stylesheet' href='flashcard.css')
+        link(rel='stylesheet' href='/flashcard.css')
         title= title
     body
         block content
-        script(type='text/javascript', src='jquery/dist/jquery.min.js')
-        script(type='text/javascript', src='MathJax/MathJax.js?config=default')
+        script(type='text/javascript', src='/jquery/dist/jquery.min.js')
+        script(type='text/javascript', src='/MathJax/MathJax.js?config=default')
         script(type='text/x-mathjax-config').
             MathJax.Hub.Config({
                 "HTML-CSS": {
@@ -22,4 +22,4 @@ html
                     processEscapes: true
                 }
             });
-        script(type='text/javascript', src='flashcard.js')
+        script(type='text/javascript', src='/flashcard.js')

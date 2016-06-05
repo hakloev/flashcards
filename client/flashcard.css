@@ -3,11 +3,40 @@ html {
     font-size: 10px;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 h1 {
     font-size: 5rem;
     font-weight: 300;
 }
 
+
+/* ========== INDEX ============ */
+.subject {
+    display: block;
+    width: 100%;
+    padding: 50px 10px;
+    text-align: center;
+    background-color: #93bb92;
+    margin-bottom: 25px;
+}
+
+.subject:last-child {
+    margin-bottom: 0px;
+}
+
+.subject > p {
+    font-size: 3.1rem;
+}
+
+.subject > span {
+    font-size: 1.5rem;
+}
+
+/* ========== SUBJECT ========== */
 h2#question-detail {
     flex:1;
     font-size: 4rem;

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    form(name='add-question', method='post')
+        input(type='hidden', value=subjectId)
+        div.input
+            span.label Question
+            input(type='text', name='question')
+        div.input
+            span.label Answer
+            input(type='text', name='answer')
+        div.actions
+            input(type='submit', value='Add')
+    div
+        textarea#question-preview

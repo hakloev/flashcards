@@ -60,3 +60,4 @@ What is an 'unstable' learning algorithm?:= Algorithms whose output classifier u
 What is the $K$-parameter in the Extra-Trees algorithm?:= $K$ is the number of attributes randomly selected at each node.
 What is the $n_{min}$ parameter in the Extra-Trees algorithm?:= $n_{min}$ is the minimum sample size for splitting a node.
 What is the $M$-parameter in the Extra-Trees algorithm?:= $M$ is the number of trees in the ensemble.
+The case-based interpeter in CREEK contains a three-step process. Elaborate about this process::= Activation: activating relevant parts of the semantic network <br> Explain: generating and explaining derived information within the activated knowledge structure <br> Focus: focus towards and selecting a conclusion that confirms with the goal.

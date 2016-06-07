@@ -1,15 +1,19 @@
 extends layout
 
 block content
+    div#buffer
     form(name='add-question', method='post')
         input(type='hidden', value=subjectId)
         div.input
             span.label Question
-            input(type='text', name='question')
+            input(type='text', name='question')#question
         div.input
             span.label Answer
-            input(type='text', name='answer')
+            input(type='text', name='answer')#answer
         div.actions
             input(type='submit', value='Add')
     div
         textarea#question-preview
+
+block js
+    script(src='/preview.js', type='text/javascript')
